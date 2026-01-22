@@ -1,0 +1,44 @@
+{
+  "state_id": "placeholder_will_be_generated",
+  "fund_isin": "LU0123456789",
+  "doc_version": "1",
+  "claimed_article": "8",
+  "sustainable_investment_definition": {
+    "present": true,
+    "text": "A sustainable investment is defined as an investment in an economic activity that contributes to an environmental or social objective",
+    "confidence": 0.85,
+    "citations": [
+      {
+        "document_id": "test_doc_id",
+        "page_number": 1,
+        "text_snippet": "sustainable investment is defined as an investment in an economic activity"
+      }
+    ]
+  },
+  "dnsh": {
+    "present": true,
+    "coverage": "partial",
+    "confidence": 0.80,
+    "citations": [
+      {
+        "document_id": "test_doc_id",
+        "page_number": 1,
+        "text_snippet": "Partial coverage - DNSH assessment is performed for the portion"
+      }
+    ]
+  },
+  "pai": {
+    "mandatory_coverage_ratio": 0.71,
+    "confidence": 0.90,
+    "citations": [
+      {
+        "document_id": "test_doc_id",
+        "page_number": 1,
+        "text_snippet": "Coverage Ratio: Approximately 71% of the portfolio"
+      }
+    ]
+  },
+  "missing_fields": [],
+  "confidence": 0.85,
+  "documents": ["test_doc_id"]
+}

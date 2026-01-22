@@ -1,0 +1,44 @@
+{
+  "state_id": "placeholder_will_be_generated",
+  "fund_isin": "LU9876543210",
+  "doc_version": "1",
+  "claimed_article": "9",
+  "sustainable_investment_definition": {
+    "present": true,
+    "text": "The fund defines a sustainable investment as an investment in an economic activity that contributes to an environmental objective, as measured by key resource efficiency indicators",
+    "confidence": 0.95,
+    "citations": [
+      {
+        "document_id": "test_doc_id",
+        "page_number": 1,
+        "text_snippet": "sustainable investment as an investment in an economic activity that contributes to an environmental objective"
+      }
+    ]
+  },
+  "dnsh": {
+    "present": true,
+    "coverage": "full",
+    "confidence": 0.95,
+    "citations": [
+      {
+        "document_id": "test_doc_id",
+        "page_number": 1,
+        "text_snippet": "Full coverage (100%) - Every investment undergoes comprehensive DNSH assessment"
+      }
+    ]
+  },
+  "pai": {
+    "mandatory_coverage_ratio": 1.0,
+    "confidence": 0.95,
+    "citations": [
+      {
+        "document_id": "test_doc_id",
+        "page_number": 1,
+        "text_snippet": "100% - All 14 mandatory PAI indicators are monitored"
+      }
+    ]
+  },
+  "missing_fields": [],
+  "confidence": 0.95,
+  "documents": ["test_doc_id"]
+}

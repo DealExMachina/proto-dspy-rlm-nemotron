@@ -1,12 +1,13 @@
 # Core Dependencies
 python-dotenv==1.0.0
-pydantic==2.5.3
-pydantic-settings==2.1.0
+pydantic==2.12.5
+pydantic-settings==2.12.0
 
 # Database
 duckdb==0.10.0
 
-# LLM & DSPy
+# LLM & DSPy (Stable Configuration)
+# Note: DSPy 2.5.36 requires migration to 3.x API - see DEPENDENCY_UPDATE.md
 dspy-ai==2.4.9
 
 # Document Processing (Docling via MCP)

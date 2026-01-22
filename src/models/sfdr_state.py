@@ -3,7 +3,7 @@
 from datetime import datetime
 from typing import Optional, List
 from enum import Enum
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class Citation(BaseModel):
@@ -67,6 +67,8 @@ class SFDRState(BaseModel):
     Each field stores value + confidence + citations.
     """
 
+    model_config = ConfigDict(use_enum_values=True)
+
     state_id: str
     fund_isin: str
     doc_version: str
@@ -82,8 +84,3 @@ class SFDRState(BaseModel):
     confidence: float = Field(ge=0.0, le=1.0, default=0.0)
     created_at: datetime = Field(default_factory=datetime.utcnow)
     documents: List[str] = Field(default_factory=list)  # list of document_ids
-
-    class Config:
-        """Pydantic config."""
-
-        use_enum_values = True

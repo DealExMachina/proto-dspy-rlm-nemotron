@@ -32,6 +32,23 @@ class DSPyLLMWrapper(dspy.LM):
         self.worker = worker
         super().__init__(model="custom")
 
+    def basic_request(self, prompt: str, **kwargs) -> Dict[str, Any]:
+        """
+        Basic request method required by DSPy LM interface.
+        
+        Returns a dict with 'choices' containing the response.
+        """
+        response = self.worker.generate(prompt=prompt, temperature=0.1, max_tokens=1000)
+        return {
+            "choices": [
+                {
+                    "message": {
+                        "content": response
+                    }
+                }
+            ]
+        }
+
     def __call__(self, prompt: str = None, messages: List[Dict] = None, **kwargs) -> List[str]:
         """Generate response."""
         if messages:
