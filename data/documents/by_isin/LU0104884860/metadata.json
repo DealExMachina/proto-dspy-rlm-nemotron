@@ -1,0 +1,26 @@
+{
+  "isin": "LU0104884860",
+  "fund_name": "Pictet - Water - P EUR",
+  "manager": "Pictet Asset Management",
+  "domicile": "Luxembourg",
+  "currency": "EUR",
+  "share_class": "P EUR",
+  "fund_identifiers": {
+    "isin": "LU0104884860"
+  },
+  "document_count": 1,
+  "documents": [
+    {
+      "original_filename": "kid_LU0104884860.pdf",
+      "organized_filename": "kid_20250122.pdf",
+      "document_type": "KIDPRIIPs",
+      "category": "supplementary",
+      "priority": 1,
+      "source_url": "https://epr.amfinesoft.com/api/v1/download/SOGECAP/underlying/kid/LU0104884860/lang/fr?key=7pPlB7HoeaCTjsHOsYGA87RfJcmpSQ",
+      "download_date": "2026-01-22T19:51:22.144040Z",
+      "checksum": "b47be90478c44997f7c4a09eae4d39ad7fa3364cd08f4585e26984e938e19cb4",
+      "size_bytes": 436639
+    }
+  ],
+  "organized_at": "2026-01-22T19:51:22.144338Z"
+}

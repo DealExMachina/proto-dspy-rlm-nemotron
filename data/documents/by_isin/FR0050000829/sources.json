@@ -1,0 +1,108 @@
+{
+  "isin": "FR0050000829",
+  "fund_name": "SG AMUNDI OBLIGATIONS VERTES (Amundi Obligations Vertes)",
+  "official_sources": {
+    "fund_profile": {
+      "url": "https://www.societegeneralegestion.fr/fra/fr/particuliers/products/FR0050000829",
+      "description": "Official fund profile page (Société Générale Gestion)",
+      "type": "web_page",
+      "last_checked": "2026-01-22"
+    },
+    "regulatory_documents": {
+      "url": "https://epr.amfinesoft.com/api/v1/download/SOGECAP/underlying/pcd/FR0050000829/lang/fr?key=7pPlB7HoeaCTjsHOsYGA87RfJcmpSQ",
+      "description": "PRIIPs KID and regulatory documentation download API",
+      "type": "download_api",
+      "notes": "Returns prospectus and statutory documents",
+      "last_checked": "2026-01-22"
+    }
+  },
+  "document_locations": {
+    "prospectus": [
+      {
+        "file": "prospectus/PSC_20250526.pdf",
+        "date": "2025-05-26",
+        "version": "latest",
+        "pages": 52,
+        "size_mb": 1.0
+      },
+      {
+        "file": "prospectus/PSC_20250525.pdf",
+        "date": "2025-05-25",
+        "version": "previous",
+        "pages": 52,
+        "size_mb": 0.9
+      }
+    ],
+    "annual_report": [
+      {
+        "file": "annual_report/RA_unknown.pdf",
+        "date": "2025-05",
+        "fiscal_year": "2024/2025",
+        "pages": 200,
+        "size_mb": 3.9
+      }
+    ],
+    "sfdr_documents": [
+      {
+        "file": "sfdr/SfdrPeriodicAnnex_20250531.pdf",
+        "type": "Article 11 Periodic Disclosure",
+        "date": "2025-05-31",
+        "pages": 9,
+        "size_mb": 0.6
+      },
+      {
+        "file": "sfdr/WebsiteSfdrDisclosure_20250526.pdf",
+        "type": "Article 10 Website Disclosure",
+        "date": "2025-05-26",
+        "pages": 8,
+        "size_mb": 0.1
+      },
+      {
+        "file": "sfdr/PreContractualDocument_20250526.pdf",
+        "type": "Pre-contractual SFDR Annex",
+        "date": "2025-05-26",
+        "pages": 10,
+        "size_mb": 0.3
+      },
+      {
+        "file": "sfdr/WebsiteSfdrDisclosureSummary_20241220.pdf",
+        "type": "Website Disclosure Summary",
+        "date": "2024-12-20",
+        "pages": null,
+        "size_mb": 0.05
+      }
+    ]
+  },
+  "extraction_priority": [
+    {
+      "priority": 1,
+      "documents": [
+        "sfdr/SfdrPeriodicAnnex_20250531.pdf",
+        "sfdr/WebsiteSfdrDisclosure_20250526.pdf",
+        "sfdr/PreContractualDocument_20250526.pdf"
+      ],
+      "rationale": "Article 10 and 11 SFDR disclosures contain most structured data"
+    },
+    {
+      "priority": 2,
+      "documents": [
+        "prospectus/PSC_20250526.pdf"
+      ],
+      "rationale": "Prospectus contains investment objective and sustainability strategy"
+    },
+    {
+      "priority": 3,
+      "documents": [
+        "annual_report/RA_unknown.pdf"
+      ],
+      "rationale": "Annual report contains actual performance and PAI data"
+    }
+  ],
+  "notes": [
+    "Fund is Article 8 SFDR - promotes environmental characteristics",
+    "All documents in French (FRA)",
+    "Multiple fund codes: PF85897, CL85898, UM85896",
+    "LEI: 969500TKG1TYT8BKXA62",
+    "Managed by SG Gestion, sub-delegated to Amundi"
+  ]
+}

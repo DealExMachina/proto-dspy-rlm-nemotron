@@ -1,0 +1,34 @@
+{
+  "isin": "LU0104884860",
+  "fund_name": "Pictet - Water - P EUR",
+  "official_sources": {
+    "fund_profile_fr": {
+      "url": "https://am.pictet.com/fr/fr/individuals/funds/pictet-water/LU0104884860",
+      "description": "Official fund page (French site)",
+      "type": "web_page"
+    },
+    "fund_profile_en": {
+      "url": "https://am.pictet.com/lu/en/individuals/funds/pictet-water/LU0104884860",
+      "description": "Official fund page (Luxembourg/English site)",
+      "type": "web_page"
+    },
+    "kid_download": {
+      "url": "https://epr.amfinesoft.com/api/v1/download/SOGECAP/underlying/kid/LU0104884860/lang/fr?key=7pPlB7HoeaCTjsHOsYGA87RfJcmpSQ",
+      "description": "KID/PRIIPs document download API",
+      "type": "download_api",
+      "status": "working"
+    },
+    "factsheet_download": {
+      "url": "https://documents.am.pictet/?audience=INSTITUTIONAL&cat=marketing-permalink&dcty=FR&dla=fr&dtyp=FCL_RME&isin=LU0104884860",
+      "description": "Marketing factsheet download",
+      "type": "download_api",
+      "status": "blocked_by_cloudfront"
+    }
+  },
+  "notes": [
+    "Pictet uses different document structure than Amundi",
+    "Documents accessible via amfinesoft API",
+    "Marketing materials behind CloudFront (may need authentication)",
+    "SFDR documents likely available on official site"
+  ]
+}
