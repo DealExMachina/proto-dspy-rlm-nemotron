@@ -1,0 +1,38 @@
+# Core Dependencies
+python-dotenv==1.0.0
+pydantic==2.5.3
+pydantic-settings==2.1.0
+
+# Database
+duckdb==0.10.0
+
+# LLM & DSPy
+dspy-ai==2.4.9
+
+# Document Processing (Docling via MCP)
+# Note: Docling is accessed via MCP server
+
+# Retrieval
+rank-bm25==0.2.2
+
+# HTTP Client for Nemotron/Ollama
+httpx==0.26.0
+requests==2.31.0
+
+# Scheduling (for future iterations)
+APScheduler==3.10.4
+
+# CLI
+click==8.1.7
+rich==13.7.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.23.2
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+pytest-timeout==2.2.0
+pytest-xdist==3.5.0
+
+# Utilities
+python-dateutil==2.8.2
