@@ -16,6 +16,7 @@ from ..models import (
 from ..storage import DatabaseManager
 from ..retrieval import BM25Retriever
 from ..worker import LLMWorker
+from ..worker.dspy_integration import configure_dspy_auto
 from .dspy_signatures import (
     ClassifyArticle,
     ExtractDefinition,
@@ -25,7 +26,12 @@ from .dspy_signatures import (
 
 
 class DSPyLLMWrapper(dspy.LM):
-    """Wrapper to make our LLM workers compatible with DSPy."""
+    """
+    Wrapper to make our LLM workers compatible with DSPy.
+    
+    Note: This is a fallback for custom workers. For native Ollama/Nemotron support,
+    use configure_dspy_auto() which uses DSPy's native LM clients.
+    """
 
     def __init__(self, worker: LLMWorker):
         """Initialize wrapper."""
@@ -81,15 +87,31 @@ class RLMController:
         self,
         db: DatabaseManager,
         retriever: BM25Retriever,
-        worker: LLMWorker,
+        worker: LLMWorker = None,
+        use_native_dspy: bool = True,
     ):
-        """Initialize RLM controller."""
+        """
+        Initialize RLM controller.
+        
+        Args:
+            db: Database manager
+            retriever: Retrieval system
+            worker: Optional LLM worker (for custom wrapper)
+            use_native_dspy: Use DSPy's native LM clients (recommended)
+        """
         self.db = db
         self.retriever = retriever
         self.worker = worker
         
-        # Configure DSPy with our LLM
-        dspy.settings.configure(lm=DSPyLLMWrapper(worker))
+        # Configure DSPy LM
+        if use_native_dspy:
+            # Use DSPy's native Ollama/OpenAI support (recommended)
+            configure_dspy_auto()
+        elif worker:
+            # Fallback: Use custom wrapper
+            dspy.settings.configure(lm=DSPyLLMWrapper(worker))
+        else:
+            raise ValueError("Either use_native_dspy=True or provide a worker")
 
     def extract_article_classification(
         self, document_id: str

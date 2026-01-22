@@ -20,7 +20,7 @@ class Settings(BaseSettings):
 
     # Ollama for local testing
     ollama_api_url: str = "http://localhost:11434"
-    ollama_model: str = "qwen2.5:3b"
+    ollama_model: str = "qwen2.5:3b-instruct"  # Use full model name with -instruct suffix
     ollama_timeout: int = 60
 
     # Database

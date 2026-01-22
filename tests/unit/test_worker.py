@@ -250,23 +250,43 @@ class TestWorkerFactory:
 
     @patch.dict("os.environ", {"USE_OLLAMA": "true"})
     def test_get_worker_ollama(self):
-        """Test getting Ollama worker."""
+        """Test getting Ollama worker with OpenAI API."""
+        from src.worker.openai_compatible import OpenAICompatibleWorker
+        
+        # Default uses OpenAI-compatible API
         worker = get_worker(use_ollama=True)
-        assert isinstance(worker, OllamaWorker)
+        assert isinstance(worker, OpenAICompatibleWorker)
+        assert "localhost" in worker.api_url
+        
+        # Legacy API still available
+        worker_legacy = get_worker(use_ollama=True, use_openai_api=False)
+        assert isinstance(worker_legacy, OllamaWorker)
 
     @patch.dict("os.environ", {"USE_OLLAMA": "false"})
     def test_get_worker_nemotron(self):
-        """Test getting Nemotron worker."""
+        """Test getting Nemotron worker with OpenAI API."""
+        from src.worker.openai_compatible import OpenAICompatibleWorker
+        
+        # Default uses OpenAI-compatible API
         worker = get_worker(use_ollama=False)
-        assert isinstance(worker, NemotronWorker)
+        assert isinstance(worker, OpenAICompatibleWorker)
+        assert "koyeb" in worker.api_url
+        
+        # Legacy API still available
+        worker_legacy = get_worker(use_ollama=False, use_openai_api=False)
+        assert isinstance(worker_legacy, NemotronWorker)
 
     @patch.dict("os.environ", {"USE_OLLAMA": "true"})
     def test_get_worker_override(self):
         """Test overriding default worker selection."""
+        from src.worker.openai_compatible import OpenAICompatibleWorker
+        
         # Settings say use Ollama, but we override to Nemotron
         worker = get_worker(use_ollama=False)
-        assert isinstance(worker, NemotronWorker)
+        assert isinstance(worker, OpenAICompatibleWorker)
+        assert "koyeb" in worker.api_url
         
         # Override to Ollama
         worker = get_worker(use_ollama=True)
-        assert isinstance(worker, OllamaWorker)
+        assert isinstance(worker, OpenAICompatibleWorker)
+        assert "localhost" in worker.api_url
