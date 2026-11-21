@@ -1,0 +1,42 @@
+{
+  "fund": {
+    "isin": "FR0050000829",
+    "name": "SG AMUNDI OBLIGATIONS VERTES"
+  },
+  "document": {
+    "id": "amundi_sfdr_web_disclosure",
+    "type": "sfdr_website_disclosure",
+    "pages": 8
+  },
+  "state": {
+    "state_id": "7632da92-ab63-49e6-aeae-bf6d5c03a205",
+    "fund_isin": "FR0050000829",
+    "doc_version": "1",
+    "claimed_article": null,
+    "sustainable_investment_definition": null,
+    "dnsh": {
+      "present": false,
+      "coverage": "none",
+      "confidence": 0.0,
+      "citations": []
+    },
+    "pai": null,
+    "missing_fields": [
+      "claimed_article",
+      "sustainable_investment_definition",
+      "dnsh",
+      "pai"
+    ],
+    "confidence": 0.0,
+    "created_at": "2026-01-22 20:01:21.286423",
+    "documents": [
+      "amundi_sfdr_web_disclosure"
+    ]
+  },
+  "test_metadata": {
+    "llm": "ollama",
+    "model": "qwen2.5:3b-instruct",
+    "api": "openai_compatible",
+    "dspy_version": "2.4.9"
+  }
+}
